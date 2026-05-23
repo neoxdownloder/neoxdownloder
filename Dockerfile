@@ -29,7 +29,6 @@ FROM python:3.13.2-alpine3.21
 
 
 #VOLUME /downloads /config
-
 WORKDIR /app
 RUN apk update && apk add --no-cache ffmpeg ca-certificates curl wget gnutls && pip install "yt-dlp[default,curl-cffi,mutagen,pycryptodomex]"
 COPY --from=build /usr/src/yt-dlp-webui/yt-dlp-webui /app
